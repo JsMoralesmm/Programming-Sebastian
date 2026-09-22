@@ -5,6 +5,7 @@
   --texto: #e6edf3;
   --texto-suave: #8b949e;
   --acento: #58a6ff;
+  --acento-sombra: rgba(88, 166, 255, 0.15);
   --borde: #30363d;
 }
 
@@ -16,6 +17,17 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.section,
+.hero {
+  scroll-margin-top: 4.5rem;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 body {
@@ -82,6 +94,8 @@ body {
   height: 160px;
   border-radius: 50%;
   border: 3px solid var(--acento);
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero__saludo {
@@ -180,9 +194,14 @@ body {
   text-decoration: underline;
 }
 
-.card__link--deshabilitado {
+.card__badge {
+  align-self: flex-start;
   color: var(--texto-suave);
-  cursor: not-allowed;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px dashed var(--borde);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
 }
 
 /* ---------- Pie de página ---------- */
@@ -233,7 +252,7 @@ body {
   transform: translateY(-3px);
   color: var(--acento);
   border-color: var(--acento);
-  box-shadow: 0 6px 16px rgba(88, 166, 255, 0.15);
+  box-shadow: 0 6px 16px var(--acento-sombra);
 }
 
 .btn:active {
