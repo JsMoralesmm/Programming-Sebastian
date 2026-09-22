@@ -244,3 +244,71 @@ body {
   color: var(--texto-suave);
   font-size: 0.9rem;
 }
+
+/* ---------- Animación de entrada del hero ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__avatar,
+.hero__saludo,
+.hero__nombre,
+.hero__frase,
+.hero__boton {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.hero__saludo {
+  animation-delay: 0.1s;
+}
+
+.hero__nombre {
+  animation-delay: 0.2s;
+}
+
+.hero__frase {
+  animation-delay: 0.3s;
+}
+
+.hero__boton {
+  animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__avatar,
+  .hero__saludo,
+  .hero__nombre,
+  .hero__frase,
+  .hero__boton {
+    animation: none;
+  }
+}
+
+/* ---------- Responsive: pantallas pequeñas ---------- */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .nav__links a {
+    margin-left: 0;
+    margin: 0 0.6rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .section {
+    padding: 3rem 1.5rem;
+  }
+}
